@@ -19,8 +19,9 @@ The game features a selected variety of enemies and weapons; the gameplay is bas
 
 ## Last Update
 The final Bosss changes animation depending on the player´s coordinates
+<p align="center">
 ![Captura de pantalla 2024-08-07 214751](https://github.com/user-attachments/assets/d9b34b94-a109-40a2-bc9c-d9b1435297af)
-
+</p>
 
 ## Credits
 Thanks to [@AleksPrz](https://github.com/AleksPrz/) , [@SantiagoGMG](https://github.com/SantiagoGMG) and [@Luisalbertochinpro12](https://github.com/Luisalbertochinpro12).
