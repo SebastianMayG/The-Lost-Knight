@@ -56,39 +56,45 @@ public class Diablo extends Enemy
         {
             if(life > 0 && hitted == false)
             {
-            if( loopCount == 28 && player.getX()>=301)
+            if( loopCount == 28 && player.getX()>=getX())
             {
                 direction = false;
                 setImage(sprites[1]);
             }
-            else if( loopCount == 21 && player.getX()>=301)
+            else if( loopCount == 21 && player.getX()>=getX())
             {
+                direction = false;
                 setImage(sprites[2]);
             }
-            else if( loopCount == 14 && player.getX()>=301)
+            else if( loopCount == 14 && player.getX()>=getX())
             {
+                direction = false;
                 setImage(sprites[3]);
             }
-            else if( loopCount == 7 && player.getX()>=301)
+            else if( loopCount == 7 && player.getX()>=getX())
             {
+                direction = false;
                 setImage(sprites[0]); 
             }
 
-            if( loopCount == 28 && player.getX()<=300)
+            if( loopCount == 28 && player.getX()<=getX())
             {
                 direction = true;
                 setImage(spritesL[0]);
             }
-            else if( loopCount == 21 && player.getX()<=300)
+            else if( loopCount == 21 && player.getX()<=getX())
             {
+                direction = true;
                 setImage(spritesL[1]);
             }
-            else if( loopCount == 14 && player.getX()<=300)
+            else if( loopCount == 14 && player.getX()<=getX())
             {
+                direction = true;
                 setImage(spritesL[2]);
             }
-            else if( loopCount == 7 && player.getX()<=300)
+            else if( loopCount == 7 && player.getX()<=getX())
             {
+                direction = true;
                 setImage(spritesL[3]);
             }
             loopCount--;
@@ -105,42 +111,61 @@ public class Diablo extends Enemy
             {  
                 //cuando el loopDash llega a 120 y si el personaje esta en x>=301
                 //mostrara las imagenes del dash
-              if(loopDash==120 && player.getX()>=301)
+              if(loopDash==120 && player.getX()>=getX())
               {
                 direction = false;
                 setImage(spritesDash[0]);
-              }
-              //aqui nuevamente pero el loopDash debe ser 110 y se monstrara otro imagen del dash
-              if(loopDash==110&& player.getX()>=301)
+              }else if (player.getX()<=getX())
               {
-                setImage(spritesDash[1]);
-              }
-              //cuando el loopDash llega a 20 monstrara en pantalla el dash0 
-              //y la velocidad la cambia a 0 para que se detenta de perseguir
-              if (loopDash==20&& player.getX()>=301)
-              {
-                setImage(spritesDash[0]);
-                speed=0;
-              }
-              //de aqui hasta abajo es lo mismo
-              //solo que va cambiar de dirrecion las imagenes si x<=300
-                if(loopDash==120 && player.getX()<=300)
-                {
                 direction = true;
                 setImage(spritesDash[2]);
               }
-              if(loopDash==110&& player.getX()<=300)
+              //aqui nuevamente pero el loopDash debe ser 110 y se monstrara otro imagen del dash
+              if(/*loopDash==110&&*/ player.getX()>=getX())
               {
+                direction = false;
+                setImage(spritesDash[1]);
+              }
+              else if (player.getX()<=getX())
+              {
+                setImage(spritesDash[3]);   
+              }
+              
+              //cuando el loopDash llega a 20 monstrara en pantalla el dash0 
+              //y la velocidad la cambia a 0 para que se detenta de perseguir
+              if (loopDash==20 && player.getX()>=getX())
+              {
+                  direction = false;
+                setImage(spritesDash[0]);
+                speed=0;
+              }else if (loopDash==20 && player.getX()<=getX())
+              {
+                direction = true;
+                setImage(spritesDash[2]);
+                speed=0;  
+              }
+              //de aqui hasta abajo es lo mismo
+              //solo que va cambiar de dirrecion las imagenes si x<=300
+              /*
+              if(loopDash==120 && player.getX()<=getX())
+              {
+                direction = true;
+                setImage(spritesDash[2]);
+              }
+              if(loopDash==110&& player.getX()<=getX())
+              {
+                  direction = true;
                 setImage(spritesDash[3]);
               }
-              if (loopDash==20&& player.getX()<=300)
+              if (loopDash==20&& player.getX()<=getX())
               {
+                  direction = true;
                 setImage(spritesDash[2]);
                 speed=0;
            
-              }
+              }*/
 
-            } 
+            }
         }
     }
 }
@@ -172,11 +197,12 @@ public class Diablo extends Enemy
             current = new GreenfootImage(getImage());
             hitted = true;
             if(direction)
-                setImage(spritesL[4]);
+               setImage(spritesL[4]);
             else
-                setImage(sprites[4]);
+              setImage(sprites[4]);
             life = life - Player.damage;
             timer.mark();
+
             //if (Player.direction == 0)
             //    setLocation(getX() + 8, getY());
             //else if (Player.direction == 4)
