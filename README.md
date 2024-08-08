@@ -17,6 +17,10 @@ The game features a selected variety of enemies and weapons; the gameplay is bas
   <img src="readme_img/recompile.png" alt="Descripción opcional de la imagen" />
 </p>
 
+## Last Update
+The final Bosss changes animation depending on the player´s coordinates
+![Captura de pantalla 2024-08-07 214751](https://github.com/user-attachments/assets/d9b34b94-a109-40a2-bc9c-d9b1435297af)
+
 
 ## Credits
 Thanks to [@AleksPrz](https://github.com/AleksPrz/) , [@SantiagoGMG](https://github.com/SantiagoGMG) and [@Luisalbertochinpro12](https://github.com/Luisalbertochinpro12).
