@@ -1,0 +1,4 @@
+right = knight_m_idle_anim_f3
+right 1 = knight_m_run_anim_f1
+right 2 = knight_m_run_anim_f2
+right 3 = knight_m_run_anim_f3
